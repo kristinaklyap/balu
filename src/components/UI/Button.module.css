@@ -1,0 +1,26 @@
+.button {
+    border: none;
+    border-radius: 24px;
+    width: auto;
+    height: auto;
+    line-height: 48px;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 40px;
+    cursor: pointer;
+}
+.button.button--primary {
+    background-color: #cdc8c4;
+    color: #fff;
+
+}
+.button.centered {
+    margin: 0 auto;
+    display: block;
+}
+.button.margin-top-20 {
+    margin-top: 20px;
+}
+.button:disabled {
+    cursor: not-allowed;
+}

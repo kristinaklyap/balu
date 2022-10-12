@@ -1,0 +1,12 @@
+.textfield {
+
+}
+
+.textfield.centered-text {
+    text-align: center
+}
+
+.textfield.limited {
+    max-width: 80%;
+    margin: 0 auto
+}

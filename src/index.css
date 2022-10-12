@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,600&display=swap');@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,600&display=swap');
+
+* {
+    box-sizing: border-box;
+
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    /*margin-top: 80px;*/
+}
+
+main {
+    margin-top: 80px;
+}
+
+
+/*GLOBAL STYLES*/
+
+a, p, span {
+    /*font-size: 24px;*/
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    line-height: 32px;
+    color: #333333;
+}
+
+h1, h2,h3,h4,h5,h6 {
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    color: #333333;
+
+}
