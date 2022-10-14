@@ -1,0 +1,93 @@
+.carousel_container {
+    /*height: 630px;*/
+    height: 700px;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+
+.carousel_container--dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+}
+
+.carousel_container--dots .dot {
+    width: 110px;
+    height: 20px;
+    display: block;
+    border-radius: 10px;
+    background-color: #cdc8c4;
+    margin: 0 14px;
+    cursor: pointer;
+}
+
+.carousel_container--dots .dot.active,
+.carousel_container--dots .dot:hover{
+    background-color: #7e726a;
+}
+
+.carousel_container .carousel_container_item {
+    position: relative;
+    /*position: absolute;*/
+    top: 0;
+    /*left: 0;*/
+    width: 100%;
+    min-width: 90%;
+    max-width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: #b2b2b2;*/
+    transition: ease all 1s ;
+    opacity: .2;
+
+}
+.carousel_container .carousel_container_item.active {
+    /*background-color: red;*/
+    opacity: 1;
+}
+.carousel_container .carousel_container_item:nth-child(2n) {
+    /*background-color: #561111;*/
+    /*left: 90%;*/
+
+}
+
+.carousel_container .carousel_container_item .carousel_container_item--content {
+    width: 100%;
+    padding: 0 100px;
+}
+
+.carousel_container .carousel_container_item .carousel_container_item--image {
+    max-width: 1000px;
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+.carousel_container .carousel_container_item .carousel_container_item--image img{
+object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.carousel_container .carousel_container_item .carousel_container_item--title {
+    font-size: 27px;
+    letter-spacing: 0.6px;
+}
+
+/*.carousel_container .carousel_container_item--image {*/
+/*}*/
+
+/*.carousel_container .carousel_container_item--content {*/
+/*}*/
