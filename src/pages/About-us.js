@@ -1,5 +1,4 @@
 import SectionTitle from "../components/UI/SectionTitle";
-import Header from "../components/Layout/Header";
 import Banner from "../components/Layout/Banner";
 import bgImage from "../assets/bgImage.png";
 import bannerStyles from "../components/Layout/Banner.module.css";

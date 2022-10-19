@@ -8,6 +8,7 @@ import AboutUs from "./pages/About-us";
 import Homepage from "./pages/Homepage";
 import Products from "./pages/Products";
 import Footer from "./components/Layout/Footer";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -28,7 +29,10 @@ function App() {
         <Routes>
           <Route index path="/" element={<Homepage />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route index path="/products" element={<Products />} />
+          <Route  path="products" element={<Products />} >
+          </Route>
+          <Route path={`/products/:productId`} element={<ProductDetails />}/>
+
         </Routes>
       </main>
       <Footer />

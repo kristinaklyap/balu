@@ -94,7 +94,6 @@ const Homepage = () => {
                         </p>
                     </TextField>
                 </Container>
-
             </section>
             <section>
                 <Carousel slides={carouselSlides} settings={carouselSettings}></Carousel>

@@ -6,8 +6,8 @@
     overflow: hidden;
     display: flex;
     position: relative;
-    margin-top: 100px;
-    padding-bottom: 100px;
+    margin-top: 150px;
+    padding-bottom: 150px;
 }
 
 .carousel_container--dots {
@@ -83,7 +83,21 @@ object-fit: cover;
 }
 .carousel_container .carousel_container_item .carousel_container_item--title {
     font-size: 27px;
+    font-weight: 500;
     letter-spacing: 0.6px;
+    position: relative;
+    padding-bottom: 15px;
+    color:#635347;
+    text-transform: uppercase;
+}
+.carousel_container .carousel_container_item .carousel_container_item--title:after{
+    content: '';
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 2px;
+    width: 190px;
+    background-color: #635347;
 }
 
 /*.carousel_container .carousel_container_item--image {*/

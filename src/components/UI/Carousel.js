@@ -63,7 +63,7 @@ const Carousel = (props) => {
                             <div className={classes['carousel_container_item--content']}>
                                 {slideTitle && settings.title &&
                                     <div className={classes['carousel_container_item--title']}>{slideTitle}</div>}
-                                {slideText && settings.text && <div>{slideText}</div>}
+                                {slideText && settings.text && <div><p>{slideText}</p></div>}
                             </div>
                         }
 
