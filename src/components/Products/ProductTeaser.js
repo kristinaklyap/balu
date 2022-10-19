@@ -24,7 +24,7 @@ const Product = (props) => {
       <span className={classes.product__description}>{props.description}</span>
       <span className={classes.product__price}>{price}</span>
       <div className={classes.product_overlay}>
-        <AddToCart onAddToCart={onAddToCartHandler} id={props.id}/>
+        <AddToCart onAddToCart={onAddToCartHandler} id={props.id} button_text={"+"} />
       </div>
     </div>
   );
