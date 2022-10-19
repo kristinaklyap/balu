@@ -30,6 +30,7 @@ a, p, span {
     letter-spacing: 0.6px;
     line-height: 32px;
     color: #333333;
+    text-decoration: none;
 }
 
 h1, h2,h3,h4,h5,h6 {

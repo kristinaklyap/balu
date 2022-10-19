@@ -3,7 +3,6 @@ import React, { useContext, useState } from "react";
 import Button from "../UI/Button";
 import Modal from "../UI/Modal";
 import Divider from "../UI/Divider";
-import Card from "../UI/Card";
 import CartItem from "../Cart/CartItem";
 import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";

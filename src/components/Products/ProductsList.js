@@ -1,5 +1,5 @@
 import React, {useEffect, useCallback, useState} from "react";
-import Product from "./Product";
+import ProductTeaser from "./ProductTeaser";
 
 import classes from "./ProductsList.module.css";
 import Container from "../UI/Container";
@@ -35,6 +35,9 @@ const ProductsList = (props) => {
           name: data[key].name,
           description: data[key].description,
           price: data[key].price,
+          id_name: data[key]['id_name'],
+          SKU: data[key].SKU,
+          image:data[key].image
         });
       }
 
@@ -52,13 +55,15 @@ const ProductsList = (props) => {
 
 
   const products_list = myProducts.map((product) => (
-    <Product
+    <ProductTeaser
       name={product.name}
       description={product.description}
       price={product.price}
       id={product.id}
       key={product.id}
       image={product.image}
+      id_name={product.id_name}
+      SKU={product.SKU}
     />
   ));
 
