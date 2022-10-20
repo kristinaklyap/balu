@@ -10,7 +10,7 @@ const CartItem = (props) => {
 
       </div>
       <div className={classes.cart_item__actions}>
-        <p className={classes.cart_item__ammount}>{props.amount}</p>
+        <p className={classes.cart_item__amount}>{props.amount}</p>
         <Button onClick={props.onRemove} text={"-"}/>
         <Button onClick={props.onAdd} text={"+"}/>
       </div>

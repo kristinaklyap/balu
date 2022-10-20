@@ -7,8 +7,6 @@ const Carousel = (props) => {
     const slides = props.slides;
     const settings = props.settings
 
-    console.log(settings)
-
     const dotClickHandler = (e) => {
         const currentDot = e.target;
         const currentDotIndex = currentDot.getAttribute('id')?.slice(-1);
@@ -48,7 +46,6 @@ const Carousel = (props) => {
                 const slideTitle = slide[1].title || null;
                 const slideText = slide[1].text || null;
 
-
                 const slideClasses = currentSlide == slideIndex ? `${classes.carousel_container_item} ${classes['active']}` : classes.carousel_container_item
                 return (
                     <div key={`slide-${slideIndex}`} id={`slide-${slideIndex}`} className={slideClasses}
@@ -66,8 +63,6 @@ const Carousel = (props) => {
                                 {slideText && settings.text && <div><p>{slideText}</p></div>}
                             </div>
                         }
-
-
                     </div>)
             })}
             {settings.dots &&

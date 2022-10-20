@@ -31,7 +31,7 @@ const Header = (props) => {
           </li>
         </ul>
       </Container>
-      <CartButton onClick={props.onShowCart} className={'button__cart'} />
+      <CartButton onClick={props.onShowCart} className={'button--cart'} />
     </header>
   );
 };

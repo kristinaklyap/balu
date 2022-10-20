@@ -1,5 +1,4 @@
-
-.button__cart {
+.button--cart {
     width: 30px;
     height: 30px;
     text-indent: 9999px;
@@ -15,7 +14,7 @@
     right: 0;
 }
 
-.button__cart .amount {
+.amount {
     font-size: 10px;
     position: absolute;
     color: #fff;

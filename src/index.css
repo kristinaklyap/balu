@@ -39,3 +39,22 @@ h1, h2,h3,h4,h5,h6 {
     color: #333333;
 
 }
+
+.margin_top_1 {
+    margin-top: 15px;
+}
+.margin_top_2 {
+    margin-top: 30px;
+}
+.margin_top_3 {
+    margin-top: 60px;
+}
+.margin_top_4 {
+    margin-top: 100px;
+}
+.margin_top_5 {
+    margin-top: 120px;
+}
+.margin_top_6 {
+    margin-top: 150px;
+}
