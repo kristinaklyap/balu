@@ -25,7 +25,7 @@
     transition: ease-all .3s;
 }
 
-.product_teaser .product_teaser__image {
+.product_teaser__image {
     width: 100%;
     height: 220px;
     display: block;
@@ -36,19 +36,19 @@
 
 }
 
-.product_teaser .product_teaser__name,
-.product_teaser .product_teaser__description {
+.product_teaser__name,
+.product_teaser__description {
     font-size: 18px;
     color: #333333;
 }
 
-.product_teaser .product_teaser__price {
+.product_teaser__price {
     font-size: 18px;
     color: #635347;
     padding-top: 10px;
 }
 
-.product_teaser .product_overlay {
+.product_overlay {
     display: none;
 }
 
@@ -56,7 +56,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    /*background-color: rgba(0,0,0,.55);*/
     width: 50px;
     height: 50px;
     display: flex;
@@ -67,7 +66,7 @@
     z-index: 23456;
 }
 
-.product_teaser .product_teaser__button {
+.product_teaser__button {
     pointer-events: auto;
     cursor: pointer;
     padding: 0;

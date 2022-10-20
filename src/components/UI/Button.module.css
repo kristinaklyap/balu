@@ -9,36 +9,42 @@
     padding: 0 40px;
     cursor: pointer;
 }
-.button.button--primary {
+
+.button:disabled {
+    cursor: not-allowed;
+}
+
+.button--primary {
     background-color: #cdc8c4;
     color: #fff;
 
 }
+
 .button--secondary {
     background-color: transparent;
     color: #333333;
     position: relative;
-padding: 0 30px;
-line-height: 1em;
+    padding: 0 30px;
+    line-height: 1em;
     text-transform: uppercase;
 }
-.button--secondary:after{
+
+.button--secondary:after {
     position: absolute;
     content: ' ';
     width: 100%;
     height: 15px;
-    background-color: rgba(99,83,71,0.3);
+    background-color: rgba(99, 83, 71, 0.3);
     bottom: -3px;
     left: 50%;
     transform: translateX(-50%);
 }
-.button.centered {
+
+.centered {
     margin: 0 auto;
     display: block;
 }
-.button.margin-top-20 {
+
+.margin-top-20 {
     margin-top: 20px;
-}
-.button:disabled {
-    cursor: not-allowed;
 }

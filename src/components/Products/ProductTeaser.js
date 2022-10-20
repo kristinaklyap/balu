@@ -15,25 +15,26 @@ const ProductTeaser = (props) => {
             name: props.name,
             amount: amount,
             price: props.price,
-            SKU:props.SKU
+            SKU: props.SKU
         })
     }
 
-    console.log('propduct teaser', props)
     return (
-            <div className={classes.product_teaser}>
-                <NavLink to={`/products/${props.id}`}>
+        <div className={classes.product_teaser}>
+            <NavLink to={`/products/${props.id}`}>
 
-                <div className={classes.product_teaser__image} style={{backgroundImage: `url(../img/${props.image})`}}></div>
+                <div className={classes.product_teaser__image}
+                     style={{backgroundImage: `url(../img/${props.image})`}}></div>
                 <span className={classes.product_teaser__name}>{props.name}</span>
                 {/*<span className={classes.product_teaser__description}>{props.description}</span>*/}
                 <span className={classes.product_teaser__price}>{price}</span>
-                </NavLink>
+            </NavLink>
 
-                <div className={classes.product_overlay}>
-                    <AddToCart customClassName={'product_teaser__button'} max={props.SKU} onAddToCart={onAddToCartHandler} id={props.id} button_text={"+"}/>
-                </div>
+            <div className={classes.product_overlay}>
+                <AddToCart customClassName={'product_teaser__button'} max={props.SKU} onAddToCart={onAddToCartHandler}
+                           id={props.id} button_text={"+"}/>
             </div>
+        </div>
     );
 };
 export default ProductTeaser;

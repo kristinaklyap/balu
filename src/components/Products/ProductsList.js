@@ -26,7 +26,6 @@ const ProductsList = (props) => {
       }
 
       const data = await response.json();
-      console.log(data);
 
       const loadedProducts = [];
       for (const key in data) {

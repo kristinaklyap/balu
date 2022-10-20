@@ -70,6 +70,7 @@ const Homepage = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
     }
+
     return (
         <>
             <Banner bgImage={bgImage} imgAlt={"Macbook Pro and Magic Mouse"}>
@@ -85,7 +86,7 @@ const Homepage = () => {
                         onClick={() => navigate("/products")}/>
             </section>
             <section>
-                <Container>
+                <Container className={'margin_top_4'}>
                     <SectionTitle headingLevel={3} title={"Inspiracje"}/>
                     <TextField listofclasses={['centered-text', 'limited']}>
                         <p>Dobrze wiemy, że podstawą efektywnej pracy jest zarówno czysty umysł
