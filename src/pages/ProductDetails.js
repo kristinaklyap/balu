@@ -1,13 +1,11 @@
 import {useParams} from "react-router-dom";
 import {useCallback, useEffect, useState} from "react";
 import Product from "../components/Products/Product";
-import ProductTeaser from "../components/Products/ProductTeaser";
 import Container from "../components/UI/Container";
 
 
 const ProductDetails = () => {
     const params = useParams()
-    console.log(params)
 
     const [productData, setProductData] =useState(null)
     const fetchProductDetails = useCallback(async () => {
@@ -22,7 +20,6 @@ const ProductDetails = () => {
             }
 
             const data = await response.json();
-            console.log(data);
             setProductData(data)
         } catch (err) {
 
@@ -41,7 +38,7 @@ const ProductDetails = () => {
                     name={productData.name}
                     description={productData.description}
                     price={productData.price}
-                    id={productData.id}
+                    id={params.productId}
                     key={productData.id}
                     image={productData.image}
                     id_name={productData.id_name}

@@ -1,41 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
 import classes from "./CartButton.module.css";
 import CartIcon from "./CartIcon";
-import CartContext from "../../store/cart-context";
 
 const CartButton = (props) => {
-  const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
-  const context = useContext(CartContext);
-  const numberOfItems = context.items.reduce(
-    (totalNumber, item) => totalNumber + item.amount,
-    0
-  );
+    const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
+    const cartState = useSelector(state => state.cart)
 
-  const { items: cartItems } = context;
+    const numberOfItems = cartState.totalQty
 
-  useEffect(() => {
-    if (context.items.length === 0) return;
-    setBtnIsHighlighted(true);
-
-    const timer = setTimeout(() => {
-      setBtnIsHighlighted(false);
-    }, 300);
-    //cleanup function
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [cartItems , context.items.length]);
-
-  return (
-    <button
-      onClick={props.onClick}
-      className={`${classes[props.className]} ${classes.button} ${
-        btnIsHighlighted ? classes.bump : ""
-      }`}
-    >
-      <CartIcon />
-      <span className={classes.amount}>{numberOfItems}</span>
-    </button>
-  );
+    return (
+        <button
+            onClick={props.onClick}
+            className={`${classes[props.className]} ${classes.button} ${
+                btnIsHighlighted ? classes.bump : ""
+            }`}
+        >
+            <CartIcon/>
+            <span className={classes.amount}>{numberOfItems}</span>
+        </button>
+    );
 };
 export default CartButton;

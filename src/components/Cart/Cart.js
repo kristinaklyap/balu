@@ -1,78 +1,89 @@
-import React, { useContext, useState } from "react";
+import React, {useState} from "react";
 
 import Button from "../UI/Button";
 import Modal from "../UI/Modal";
 import Divider from "../UI/Divider";
 import CartItem from "../Cart/CartItem";
-import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";
+import {cartActions} from "../../store/cart";
+import {useDispatch, useSelector} from "react-redux";
 
 const Cart = (props) => {
-  const [isCheckout, setIsCheckout] = useState(false);
-  const context = useContext(CartContext);
-  const totalAmount = `${context.totalAmount.toFixed(2)} PLN`;
+        const [isCheckout, setIsCheckout] = useState(false);
+        const dispatch = useDispatch();
 
-  const hasItems = context.items.length > 0;
+        const cartState = useSelector(state => state.cart)
 
-  const cartItemRemoveHandler = (id) => {
-    context.removeItem(id);
-  };
-  const cartItemAddHandler = (item) => {
-    const cartItem = { ...item, amount: 1 };
-    context.addItem(cartItem);
-  };
+        const totalAmount = `${cartState.totalAmount.toFixed(2)} PLN`;
+        const hasItems = cartState.items.length > 0;
 
-  const clearCartHandler = () => context.clearCart();
+        const cartItemRemoveHandler = (id) => {
+            dispatch(cartActions.removeItemFromCart(id))
+        };
+        const cartItemAddHandler = (item) => {
+            dispatch(cartActions.addItemToCart({
+                ...item,
+                quantity: item.quantity,
+            }))
+        }
 
-  const orderHandler = () => {
-    setIsCheckout(true);
-  };
+        const clearCartHandler = () => {
+            dispatch(cartActions.clearCart())
+            props.onClose();
+        }
 
-  const cartItems = context.items.map((item) => (
-    <CartItem
-      key={item.id + Math.random()}
-      id={item.id}
-      name={item.name}
-      price={item.price}
-      amount={item.amount}
-      onAdd={cartItemAddHandler.bind(null, item)}
-      onRemove={cartItemRemoveHandler.bind(null, item.id)}
-    />
-  ));
+        const orderHandler = () => {
+            setIsCheckout(true);
+        };
 
-  const modalActions = (
-    <div>
-      <Button onClick={props.onClose} text={"Close"} />
-      {hasItems && <Button onClick={orderHandler} text={"Order"} />}
-    </div>
-  );
+        const cartItems = cartState.items.map((item) => (
+            <CartItem
+                key={item.id + Math.random()}
+                id={item.id}
+                name={item.name}
+                price={item.price}
+                amount={item.amount}
+                onAdd={cartItemAddHandler.bind(null, item)}
+                onRemove={cartItemRemoveHandler.bind(null, item.id)}
+            />
+        ));
 
-  const cartContent =
-    context.items.length > 0 ? (
-      <React.Fragment>
-          <p>Twój koszyk:</p>
-          {cartItems}
-         <Divider />
-          <p>Total amount: {totalAmount}</p>
-      </React.Fragment>
-    ) : (
-      "Brak produktów w koszyku"
-    );
+        const modalActions = (
+            <div>
+                <Button onClick={props.onClose} text={"Close"}/>
+                {hasItems && <Button onClick={orderHandler} text={"Order"}/>}
+            </div>
+        );
 
-  return (
-    <Modal onClose={props.onClose}>
-      {cartContent}
+        const cartContent =
+            cartState.items.length > 0 ? (
+                <React.Fragment>
+                    <p>Twój koszyk:</p>
+                    {cartItems}
+                    <Divider/>
+                    <p>Total amount: {totalAmount}</p>
+                </React.Fragment>
+            ) : (
+                "Brak produktów w koszyku"
+            );
 
-      {isCheckout && (
-        <Checkout
-          clearCart={clearCartHandler}
-          order={context.items}
-          total={totalAmount}
-          onCancel={props.onClose}
-        />
-      )}
-      {!isCheckout && modalActions}
-    </Modal>
-  );
-};
+        console.log('Cart.js', cartState.items)
+
+        return (
+            <Modal onClose={props.onClose}>
+                {cartContent}
+
+                {isCheckout && (
+                    <Checkout
+                        clearCart={clearCartHandler}
+                        order={cartState.items}
+                        total={totalAmount}
+                        onCancel={props.onClose}
+                    />
+                )}
+                {!isCheckout && modalActions}
+            </Modal>
+        );
+    }
+;
 export default Cart;

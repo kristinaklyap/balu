@@ -1,28 +1,26 @@
-import React, {useContext} from "react";
-import CartContext from "../../store/cart-context";
+import React from "react";
 import classes from "./Product.module.css";
 import AddToCart from "../Cart/AddToCart";
-import {useParams} from "react-router-dom";
+import {cartActions} from "../../store/cart";
+import {useDispatch} from "react-redux";
 
 const Product = (props) => {
-    const context = useContext(CartContext)
-    const params = useParams();
-    console.log('params', params)
-    console.log('props', props)
+    const dispatch = useDispatch();
     const price = `${props.price.toFixed(2)}PLN`;
 
-    const onAddToCartHandler = amount => {
-        context.addItem({
+    const onAddToCartHandler = quantity => {
+        dispatch(cartActions.addItemToCart({
             id: props.id,
             name: props.name,
-            amount: amount,
-            price: props.price
-        })
+            quantity: quantity,
+            price: props.price,
+            SKU: props.SKU
+        }))
     }
 
     return (
         <div className={classes.product}>
-            <div className={classes.product__image} >
+            <div className={classes.product__image}>
                 <img alt="" src={`../img/${props.image}`}/>
             </div>
 
@@ -34,7 +32,9 @@ const Product = (props) => {
                         <span className={classes.product__price}>{price}</span>
                         <span className={classes.product__SKU}>SKU: {props.SKU}</span>
                     </div>
-                    <AddToCart disabled={`${props.SKU === 0 && 'disabled'}`} customClassName={`button--secondary`} max={props.SKU} onAddToCart={onAddToCartHandler} id={props.id} button_text={"Add to cart"}/>
+                    <AddToCart disabled={`${props.SKU === 0 && 'disabled'}`} customClassName={`button--secondary`}
+                               max={props.SKU} onAddToCart={onAddToCartHandler} id={props.id}
+                               button_text={"Add to cart"}/>
                 </div>
 
 
