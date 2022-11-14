@@ -1,0 +1,30 @@
+.cart_item {
+  display: flex;
+  justify-content: space-between;
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+  }
+
+  &__actions {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    button {
+      padding: 0;
+      margin: 0 5px;
+      line-height: 30px;
+      height: 30px;
+      width: 30px;
+
+    }
+  }
+
+  &__ammunt {
+    padding: 0 20px;
+  }
+}

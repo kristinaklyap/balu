@@ -7,25 +7,23 @@
     text-align: center;
     text-transform: uppercase;
     margin: 30px auto 50px;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -22px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 2px solid #635347;
+        width: 195px;
+        height: 1px;
+    }
 }
-
-h3.section_title {
+h3 {
     font-size: 38px;
     line-height: 38px;
 }
 
-h2.section_title {
+h2 {
     font-size: 45px;
     line-height: 45px;
-}
-
-.section_title:after {
-    content: '';
-    position: absolute;
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom: 2px solid #635347;
-    width: 195px;
-    height: 1px;
 }

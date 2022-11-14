@@ -1,12 +1,9 @@
-import classes from "./Checkout.module.css";
+import classes from "./Checkout.module.scss";
 import useInput from "../../hooks/use-input";
 import Button from "../UI/Button";
 
 const validateTextInput = (val) => val.trim() !== "";
 const addOrderHandler = async (props, order) => {
-  console.log(order);
-
-  //POST
   const response = await fetch(
     "https://react-http-1e246-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
     {
@@ -21,6 +18,7 @@ const addOrderHandler = async (props, order) => {
   props.clearCart();
   props.onCancel();
 };
+
 const Checkout = (props) => {
   let formIsValid = false;
 
@@ -72,9 +70,6 @@ const Checkout = (props) => {
   const formSubmissionHandler = (e) => {
     e.preventDefault();
     if (!formIsValid) return;
-
-    console.log("items", props.order);
-    console.log("total", props.total);
 
     addOrderHandler(props, {
       order_items: props.order,

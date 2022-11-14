@@ -1,7 +1,7 @@
 import React, {useEffect, useCallback, useState} from "react";
 import ProductTeaser from "./ProductTeaser";
 
-import classes from "./ProductsList.module.css";
+import classes from "./ProductsList.module.scss";
 import Container from "../UI/Container";
 
 

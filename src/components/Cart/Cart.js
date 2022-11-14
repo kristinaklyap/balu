@@ -57,17 +57,15 @@ const Cart = (props) => {
 
         const cartContent =
             cartState.items.length > 0 ? (
-                <React.Fragment>
+                <>
                     <p>Twój koszyk:</p>
                     {cartItems}
                     <Divider/>
                     <p>Total amount: {totalAmount}</p>
-                </React.Fragment>
+                </>
             ) : (
                 "Brak produktów w koszyku"
             );
-
-        console.log('Cart.js', cartState.items)
 
         return (
             <Modal onClose={props.onClose}>

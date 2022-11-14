@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Product.module.css";
+import classes from "./Product.module.scss";
 import AddToCart from "../Cart/AddToCart";
 import {cartActions} from "../../store/cart";
 import {useDispatch} from "react-redux";
@@ -36,10 +36,7 @@ const Product = (props) => {
                                max={props.SKU} onAddToCart={onAddToCartHandler} id={props.id}
                                button_text={"Add to cart"}/>
                 </div>
-
-
             </div>
-
         </div>
     );
 }

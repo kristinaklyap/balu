@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./SectionTitle.module.css";
+import classes from "./SectionTitle.module.scss";
 
 const SectionTitle = ({ headingLevel = 3, ...props }) => {
   const Tag = `h${headingLevel}`;
