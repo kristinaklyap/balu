@@ -2,8 +2,7 @@ import Container from "../UI/Container";
 import { Link } from "react-router-dom";
 import instagramIcon from "../../assets/instagram-icon.png";
 import logo from "../../assets/logo.png";
-import classes from "./Footer.module.css";
-import { createElement } from "react";
+import classes from "./Footer.module.scss";
 
 const Footer = () => {
   return (
@@ -34,7 +33,7 @@ const Footer = () => {
         </div>
       </Container>
       <div className={classes.copyrights}>
-        <p>© 2020 Kristina Klyap. All Rights Reserved</p>
+        <p>© 2022 Kristina Klyap. All Rights Reserved</p>
       </div>
     </footer>
   );

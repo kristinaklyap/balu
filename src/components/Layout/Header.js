@@ -1,8 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom"
-import classes from "./Header.module.css";
-
-//import of images supported by setup !
+import classes from "./Header.module.scss";
 import logo from "../../assets/logo.png";
 import CartButton from "../Cart/CartButton";
 import Container from "../UI/Container";
@@ -31,7 +29,7 @@ const Header = (props) => {
           </li>
         </ul>
       </Container>
-      <CartButton onClick={props.onShowCart} className={'button--cart'} />
+      <CartButton onClick={props.onShowCart}/>
     </header>
   );
 };

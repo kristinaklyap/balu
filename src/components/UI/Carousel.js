@@ -1,4 +1,4 @@
-import classes from './Carousel.module.css'
+import classes from './Carousel.module.scss'
 import {useEffect, useState} from "react";
 
 const Carousel = (props) => {
@@ -46,7 +46,7 @@ const Carousel = (props) => {
                 const slideTitle = slide[1].title || null;
                 const slideText = slide[1].text || null;
 
-                const slideClasses = currentSlide == slideIndex ? `${classes.carousel_container_item} ${classes['active']}` : classes.carousel_container_item
+                const slideClasses = (currentSlide == slideIndex) ? `${classes.carousel_container_item} ${classes['active']}` : classes.carousel_container_item
                 return (
                     <div key={`slide-${slideIndex}`} id={`slide-${slideIndex}`} className={slideClasses}
                          style={{transform: `translateX(-${currentSlide * 100}%)`}}
@@ -71,8 +71,8 @@ const Carousel = (props) => {
                         const dotIndex = item[0];
                         const dotClasses = currentSlide == dotIndex ? `${classes['dot']} dot-${dotIndex} ${classes['active']}` : `${classes['dot']} dot-${dotIndex}`
 
-                        return (<span onClick={dotClickHandler} id={`dot-${dotIndex}`} key={`dot-${dotIndex}`}
-                                      className={dotClasses}></span>)
+                        return <span onClick={dotClickHandler} id={`dot-${dotIndex}`} key={`dot-${dotIndex}`}
+                                     className={dotClasses}/>
                     })}
                 </div>
             }

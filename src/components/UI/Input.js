@@ -1,13 +1,5 @@
 import React from "react";
-import classes from './Input.module.css'
-/*
-
-example of input object should be passed in props
-{
-  type:'text',
-  id: 232
-}
-*/
+import classes from './Input.module.scss'
 
 const Input = React.forwardRef((props, ref) => {
   return <div className={classes.input}>

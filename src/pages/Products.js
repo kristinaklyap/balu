@@ -3,7 +3,7 @@ import ProductsList from "../components/Products/ProductsList";
 import React from "react";
 import Banner from "../components/Layout/Banner";
 import bgImage from "../assets/bgImage.png";
-import bannerStyles from "../components/Layout/Banner.module.css";
+import bannerStyles from "../components/Layout/Banner.module.scss";
 
 const Products = () => {
   return (

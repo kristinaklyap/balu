@@ -1,4 +1,4 @@
-import classes from "./CartItem.module.css";
+import classes from "./CartItem.module.scss";
 import Button from "../UI/Button";
 
 const CartItem = (props) => {
@@ -7,7 +7,6 @@ const CartItem = (props) => {
       <div className={classes.cart_item__details}>
         <p>{props.name}</p>
         <p>{props.price}</p>
-
       </div>
       <div className={classes.cart_item__actions}>
         <p className={classes.cart_item__amount}>{props.amount}</p>

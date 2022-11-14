@@ -1,5 +1,4 @@
-import React, {useContext} from "react";
-import classes from "./ProductTeaser.module.css";
+import classes from "./ProductTeaser.module.scss";
 import AddToCart from "../Cart/AddToCart";
 import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
