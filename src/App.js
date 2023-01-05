@@ -9,6 +9,10 @@ import Products from "./pages/Products";
 import Footer from "./components/Layout/Footer";
 import ProductDetails from "./pages/ProductDetails";
 
+
+import './App.scss';
+import './styles/scss/main.scss';
+
 function App() {
     const [cartIsShown, setCartIsShown] = useState(false);
 

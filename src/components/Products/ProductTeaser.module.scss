@@ -84,4 +84,13 @@
   form input {
     display: none;
   }
+
+  @media (max-width: 1024px) {
+    flex: 1;
+    flex-basis: 40%;
+  }
+  @media (max-width: 560px) {
+    flex-basis: 100%;
+  }
+
 }

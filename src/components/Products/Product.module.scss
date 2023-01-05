@@ -81,4 +81,19 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    padding: 100px 20px 0;
+    &__image {
+      max-width: 100%;
+    }
+    &__info {
+      padding-left: 0;
+    }
+  }
+  @media (max-width: 560px) {
+    &__info {
+     text-align: left;
+    }
+  }
 }

@@ -3,6 +3,8 @@ import classes from "./Banner.module.scss";
 import Container from "../UI/Container";
 
 const Banner = (props) => {
+
+    console.log('moje style ',classes)
   const styles = `${classes.banner} ${props.className}`
   return (
     <div className={styles}>

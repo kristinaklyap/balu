@@ -91,4 +91,25 @@
     }
 
   }
+
+  @media (max-width: 768px) {
+    height: 850px;
+    padding-bottom: 100px;
+    &_item {
+      min-width: 95%;
+      max-width: 95%;
+      &--content {
+        padding: 0 30px;
+      }
+    }
+  }
+  @media (max-width: 460px) {
+    &_item {
+      flex-wrap: wrap;
+      &--image {
+        height: 200px;
+        margin-bottom: 20px;
+      }
+    }
+  }
 }
