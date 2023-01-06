@@ -1,0 +1,28 @@
+$sizes: ("1": 10px, "2": 20px, "3": 30px, "4": 60px, "5": 100px, "6": 120px);
+
+@each $name, $size in $sizes {
+  .pt#{$name} {
+    padding-top: $size;
+  }
+  .pb#{$name} {
+    padding-bottom: $size;
+  }
+  .pr#{$name} {
+    padding-right: $size;
+  }
+  .pl#{$name} {
+    padding-left: $size;
+  }
+  .mt#{$name} {
+    margin-top: $size;
+  }
+  .mb#{$name} {
+    margin-bottom: $size;
+  }
+  .mr#{$name} {
+    margin-right: $size;
+  }
+  .ml#{$name} {
+    margin-left: $size;
+  }
+}

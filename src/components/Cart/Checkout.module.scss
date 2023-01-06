@@ -1,38 +1,50 @@
+@use "./src/styles/scss/breakpoints";
+
 .checkout_form {
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  .form-control {
+    width: calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    position: relative;
+
+    label {
+      padding-bottom: 5px;
+      color: #b2b2b2;
+      font-size: 14px;
+    }
+
+    input {
+      border: 1px solid #b2b2b2;
+      border-radius: 4px;
+      line-height: 28px;
+    }
+
+    &.has-error input {
+      border-color: #bb1f1f;
+    }
+
+    .error {
+      position: absolute;
+      bottom: 0;
+      color: #bb1f1f;
+      font-size: 12px;
+      line-height: 1em;
+    }
+  }
+
+  @media (max-width: breakpoints.$mediumMobileBreakpoint) {
+
+    .form-control {
+      width: 100%;
+    }
+  }
 }
 
-.form-control {
-  width: calc(50% - 10px);
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 30px;
-  position: relative;
 
-  label {
-    padding-bottom: 5px;
-    color: #b2b2b2;
-    font-size: 14px;
-  }
-
-  input {
-    border: 1px solid #b2b2b2;
-    border-radius: 4px;
-    line-height: 28px;
-  }
-
-  &.has-error input {
-    border-color: #bb1f1f;
-  }
-
-  .error {
-    position: absolute;
-    bottom: 0;
-    color: #bb1f1f;
-    font-size: 12px;
-  }
-}
 

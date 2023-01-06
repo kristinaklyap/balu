@@ -1,3 +1,5 @@
+@use "./src/styles/scss/breakpoints";
+
 .carousel_container {
   height: 700px;
   width: 100%;
@@ -90,5 +92,26 @@
       }
     }
 
+  }
+
+  @media (max-width: breakpoints.$mobileBreakpoint) {
+    height: 850px;
+    padding-bottom: 100px;
+    &_item {
+      min-width: 95%;
+      max-width: 95%;
+      &--content {
+        padding: 0 30px;
+      }
+    }
+  }
+  @media (max-width: breakpoints.$smallMobileBreakpoint) {
+    &_item {
+      flex-wrap: wrap;
+      &--image {
+        height: 200px;
+        margin-bottom: 20px;
+      }
+    }
   }
 }

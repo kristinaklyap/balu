@@ -1,3 +1,5 @@
+@use "./src/styles/scss/breakpoints";
+
 .product {
   display: flex;
   width: 100%;
@@ -81,4 +83,19 @@
     }
   }
 
+  @media (max-width: breakpoints.$tabletBreakpoint) {
+    flex-wrap: wrap;
+    padding: 100px 20px 0;
+    &__image {
+      max-width: 100%;
+    }
+    &__info {
+      padding-left: 0;
+    }
+  }
+  @media (max-width: breakpoints.$mediumMobileBreakpoint) {
+    &__info {
+     text-align: left;
+    }
+  }
 }

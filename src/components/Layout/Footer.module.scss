@@ -1,13 +1,18 @@
+@use "./src/styles/scss/breakpoints";
 .footer {
   border-top: 1px solid rgba(124, 124, 124, 0.25);
   margin-top: 100px;
   padding-top: 50px;
   padding-bottom: 50px;
 
+  &-content {
+    width: 100%;
+  }
+
   ul {
     display: flex;
     list-style: none;
-
+    width: 100%;
     li a {
       padding: 0 15px;
       text-transform: uppercase;
@@ -22,6 +27,7 @@
 
   .col {
     flex-basis: calc(100% / 3);
+    display: flex;
   }
 
   .copyrights p {
@@ -57,5 +63,27 @@
       top: 2px;
     }
 
+  }
+
+  @media (max-width: breakpoints.$tabletBreakpoint) {
+    .social-container {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: breakpoints.$mobileBreakpoint) {
+    .footer-content {
+      flex-direction: column;
+    }
+    .col {
+      order: 2;
+    }
+    .logo-container {
+      order: 1;
+    }
+    ul {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }

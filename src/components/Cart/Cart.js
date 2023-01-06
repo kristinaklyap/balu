@@ -1,17 +1,18 @@
 import React, {useState} from "react";
+import {cartActions} from "../../store/cart";
+import {useDispatch, useSelector} from "react-redux";
 
 import Button from "../UI/Button";
 import Modal from "../UI/Modal";
 import Divider from "../UI/Divider";
 import CartItem from "../Cart/CartItem";
 import Checkout from "./Checkout";
-import {cartActions} from "../../store/cart";
-import {useDispatch, useSelector} from "react-redux";
+
+import classes from "./Cart.module.scss";
 
 const Cart = (props) => {
         const [isCheckout, setIsCheckout] = useState(false);
         const dispatch = useDispatch();
-
         const cartState = useSelector(state => state.cart)
 
         const totalAmount = `${cartState.totalAmount.toFixed(2)} PLN`;
@@ -32,9 +33,7 @@ const Cart = (props) => {
             props.onClose();
         }
 
-        const orderHandler = () => {
-            setIsCheckout(true);
-        };
+        const orderHandler = () => setIsCheckout(true);
 
         const cartItems = cartState.items.map((item) => (
             <CartItem
@@ -42,29 +41,30 @@ const Cart = (props) => {
                 id={item.id}
                 name={item.name}
                 price={item.price}
-                amount={item.amount}
+                quantity={item.quantity}
+                totalPrice={item.totalPrice}
                 onAdd={cartItemAddHandler.bind(null, item)}
                 onRemove={cartItemRemoveHandler.bind(null, item.id)}
             />
         ));
 
         const modalActions = (
-            <div>
-                <Button onClick={props.onClose} text={"Close"}/>
-                {hasItems && <Button onClick={orderHandler} text={"Order"}/>}
+            <div className={'mt2'}>
+                <Button className={'mr1'} onClick={props.onClose} text={"Zamknij"}/>
+                {hasItems && <Button onClick={orderHandler} text={"Zamów"}/>}
             </div>
         );
 
         const cartContent =
             cartState.items.length > 0 ? (
-                <>
-                    <p>Twój koszyk:</p>
+                <div className={classes['cart']}>
+                    <p className={classes.cart_title}>Twój koszyk</p>
                     {cartItems}
                     <Divider/>
                     <p>Total amount: {totalAmount}</p>
-                </>
+                </div>
             ) : (
-                "Brak produktów w koszyku"
+               <p>Brak produktów w koszyku.</p>
             );
 
         return (

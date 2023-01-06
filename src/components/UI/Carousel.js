@@ -1,11 +1,8 @@
 import classes from './Carousel.module.scss'
 import {useEffect, useState} from "react";
 
-const Carousel = (props) => {
-
+const Carousel = ({slides, settings}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const slides = props.slides;
-    const settings = props.settings
 
     const dotClickHandler = (e) => {
         const currentDot = e.target;

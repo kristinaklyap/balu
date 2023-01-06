@@ -4,33 +4,34 @@ import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {cartActions} from "../../store/cart";
 
-const ProductTeaser = (props) => {
+const ProductTeaser = ({id, name, price, SKU, image}) => {
     const dispatch = useDispatch()
 
-    const price = `${props.price.toFixed(2)}PLN`;
+    const fixedPrice = `${price.toFixed(2)}PLN`;
 
     const onAddToCartHandler = quantity => {
         dispatch(cartActions.addItemToCart({
-            id: props.id,
-            name: props.name,
+            id: id,
+            name: name,
             quantity: quantity,
-            price: props.price,
-            SKU: props.SKU
+            price: price,
+            SKU: SKU
         }))
     }
 
     return (
         <div className={classes.product_teaser}>
-            <NavLink to={`/products/${props.id}`}>
+            <NavLink to={`/products/${id}`}>
                 <div className={classes.product_teaser__image}
-                     style={{backgroundImage: `url(../img/${props.image})`}}></div>
-                <span className={classes.product_teaser__name}>{props.name}</span>
-                <span className={classes.product_teaser__price}>{price}</span>
+                     style={{backgroundImage: `url(../img/${image})`}}></div>
+                <span className={classes.product_teaser__name}>{name}</span>
+                <span className={classes.product_teaser__price}>{fixedPrice}</span>
             </NavLink>
 
             <div className={classes.product_overlay}>
-                <AddToCart customClassName={'product_teaser__button'} max={props.SKU} onAddToCart={onAddToCartHandler}
-                           id={props.id} button_text={"+"}/>
+                <AddToCart disabled={`${SKU === 0 && 'disabled'}`} customClassName={'product_teaser__button'}
+                           max={SKU} onAddToCart={onAddToCartHandler}
+                           id={id} button_text={"+"}/>
             </div>
         </div>
     );

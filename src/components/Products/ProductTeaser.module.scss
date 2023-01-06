@@ -1,3 +1,5 @@
+@use "./src/styles/scss/breakpoints";
+
 .product_teaser {
   display: flex;
   flex-direction: column;
@@ -74,6 +76,9 @@
     cursor: auto;
     z-index: 23456;
     display: none;
+    p {
+      display: none;
+    }
   }
 
   &:hover .product_overlay {
@@ -84,4 +89,13 @@
   form input {
     display: none;
   }
+
+  @media (max-width: breakpoints.$tabletMediumBreakpoint) {
+    flex: 1;
+    flex-basis: 40%;
+  }
+  @media (max-width: breakpoints.$mediumMobileBreakpoint) {
+    flex-basis: 100%;
+  }
+
 }

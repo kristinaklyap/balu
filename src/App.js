@@ -9,6 +9,11 @@ import Products from "./pages/Products";
 import Footer from "./components/Layout/Footer";
 import ProductDetails from "./pages/ProductDetails";
 
+
+import './App.scss';
+import './styles/scss/main.scss';
+import Inspirations from "./pages/Inspirations";
+
 function App() {
     const [cartIsShown, setCartIsShown] = useState(false);
 
@@ -28,9 +33,9 @@ function App() {
                 <Routes>
                     <Route index path="/" element={<Homepage/>}/>
                     <Route path="/about-us" element={<AboutUs/>}/>
-                    <Route path="products" element={<Products/>}>
-                    </Route>
-                    <Route path={`/products/:productId`} element={<ProductDetails/>}/>
+                    <Route path="products" element={<Products/>}/>
+                    <Route path="inspirations" element={<Inspirations/>}/>
+                    <Route path={`/products/:productId`} element={<ProductDetails/>} />
 
                 </Routes>
             </main>

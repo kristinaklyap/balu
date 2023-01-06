@@ -1,0 +1,12 @@
+@import "reset";
+@import "spacings";
+
+.df {
+  display: flex;
+  &.dc {
+    flex-direction: column;
+  }
+  &.ac {
+    align-items: center;
+  }
+}

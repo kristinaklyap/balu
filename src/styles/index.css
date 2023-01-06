@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,600&display=swap');@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,600&display=swap');
 
 * {
     box-sizing: border-box;
 
 }
 
-html {
+html, body {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
-}
-
-body {
+    width: 100%;
+    max-width: 100vw;
+    display: block;
     margin: 0;
-    /*margin-top: 80px;*/
 }
 
 main {
@@ -33,7 +33,7 @@ a, p, span {
     text-decoration: none;
 }
 
-h1, h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     letter-spacing: 0.6px;
     color: #333333;
@@ -43,18 +43,23 @@ h1, h2,h3,h4,h5,h6 {
 .margin_top_1 {
     margin-top: 15px;
 }
+
 .margin_top_2 {
     margin-top: 30px;
 }
+
 .margin_top_3 {
     margin-top: 60px;
 }
+
 .margin_top_4 {
     margin-top: 100px;
 }
+
 .margin_top_5 {
     margin-top: 120px;
 }
+
 .margin_top_6 {
     margin-top: 150px;
 }
