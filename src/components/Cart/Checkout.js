@@ -3,6 +3,7 @@ import useInput from "../../hooks/use-input";
 import Button from "../UI/Button";
 
 const validateTextInput = (val) => val.trim() !== "";
+const validatePostalCode = (val) => /^\d{2}(-\d{3})?$/.test(val)
 const addOrderHandler = async (props, order) => {
   const response = await fetch(
     "https://react-http-1e246-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
@@ -47,7 +48,7 @@ const Checkout = (props) => {
     onChangeHandler: postalInputOnChange,
     onBlurHandler: postalInputOnBlur,
     reset: postalInputReset,
-  } = useInput(validateTextInput);
+  } = useInput(validatePostalCode);
 
   const {
     enteredValue: cityInput,
@@ -94,7 +95,7 @@ const Checkout = (props) => {
           nameInputHasError ? `${classes["has-error"]}` : ""
         }`}
       >
-        <label htmlFor={"name"}>Name</label>
+        <label htmlFor={"name"}>Imię i nazwisko</label>
         <input
           id={"name"}
           type={"text"}
@@ -103,7 +104,7 @@ const Checkout = (props) => {
           onBlur={nameInputOnBlur}
         />
         {nameInputHasError && (
-          <p className={classes.error}>Please provide your name</p>
+          <p className={classes.error}>Proszę podaj imię i nazwisko</p>
         )}
       </div>
       <div
@@ -111,7 +112,7 @@ const Checkout = (props) => {
           streetInputHasError ? `${classes["has-error"]}` : ""
         }`}
       >
-        <label htmlFor={"street"}>Street</label>
+        <label htmlFor={"street"}>Ulica</label>
         <input
           id={"street"}
           type={"text"}
@@ -120,7 +121,7 @@ const Checkout = (props) => {
           onBlur={streetInputOnBlur}
         />
         {streetInputHasError && (
-          <p className={classes.error}>Please provide the adress</p>
+          <p className={classes.error}>Proszę uzupełnij adres</p>
         )}
       </div>
       <div
@@ -128,7 +129,7 @@ const Checkout = (props) => {
           postalInputHasError ? `${classes["has-error"]}` : ""
         }`}
       >
-        <label htmlFor={"postal"}>Postal code</label>
+        <label htmlFor={"postal"}>Kod pocztowy</label>
         <input
           id={"postal"}
           type={"text"}
@@ -137,7 +138,7 @@ const Checkout = (props) => {
           onBlur={postalInputOnBlur}
         />
         {postalInputHasError && (
-          <p className={classes.error}>Please provide the postal code</p>
+          <p className={classes.error}>Proszę uzupełnij kod pocztowy (format: 00-000)</p>
         )}
       </div>
       <div
@@ -145,7 +146,7 @@ const Checkout = (props) => {
           cityInputHasError ? `${classes["has-error"]}` : ""
         }`}
       >
-        <label htmlFor={"city"}>City</label>
+        <label htmlFor={"city"}>Miasto</label>
         <input
           id={"city"}
           type={"text"}
@@ -154,7 +155,7 @@ const Checkout = (props) => {
           onBlur={cityInputOnBlur}
         />
         {cityInputHasError && (
-          <p className={classes.error}>Please provide the city</p>
+          <p className={classes.error}>Proszę podaj nazwę miasta</p>
         )}
       </div>
       <Button type={"button"} onClick={props.onCancel} text={"Cancel"} />

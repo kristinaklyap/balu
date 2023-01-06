@@ -1,3 +1,4 @@
+@use "./src/styles/scss/breakpoints";
 .banner {
     height: 655px;
     width: 100%;
@@ -60,7 +61,7 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: breakpoints.$mobileBreakpoint) {
         &__content {
             h1 {
                 .moved {

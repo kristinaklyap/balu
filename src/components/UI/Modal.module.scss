@@ -1,3 +1,5 @@
+@use "./src/styles/scss/breakpoints";
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -21,10 +23,17 @@
     animation: slide-down 300ms ease-out forwards;
 }
 
-@media (min-width: 768px) {
+@media (min-width: breakpoints.$mobileBreakpoint) {
     .modal {
-        width: 40rem;
-        left: calc(50% - 20rem);
+        width: 50rem;
+        left: calc(50% - 25rem);
+    }
+}
+
+@media (max-width: breakpoints.$mobileBreakpoint){
+    .modal {
+        overflow-y: scroll;
+        height: 70vh;
     }
 }
 

@@ -1,20 +1,23 @@
-import classes from "./CartItem.module.scss";
 import Button from "../UI/Button";
+import classes from "./CartItem.module.scss";
 
-const CartItem = (props) => {
-  return (
-    <div className={classes.cart_item}>
-      <div className={classes.cart_item__details}>
-        <p>{props.name}</p>
-        <p>{props.price}</p>
-      </div>
-      <div className={classes.cart_item__actions}>
-        <p className={classes.cart_item__amount}>{props.amount}</p>
-        <Button onClick={props.onRemove} text={"-"}/>
-        <Button onClick={props.onAdd} text={"+"}/>
-      </div>
-    </div>
-  );
+const CartItem = ({name, price, quantity, onRemove, onAdd, totalPrice}) => {
+    return (
+        <div className={`${classes.cart_item}`}>
+            <div><p>{name}</p></div>
+            <div className={classes.cart_item__details}>
+                <div><p>{price} PLN</p></div>
+                <div className="quantity">
+                    <div className={classes.cart_item__actions}>
+                        <p>{quantity}szt</p>
+                        <Button onClick={onRemove} text={"-"}/>
+                        <Button onClick={onAdd} text={"+"}/>
+                    </div>
+                </div>
+                <div className={classes.cart_item__total}>{totalPrice.toFixed(2)} PLN</div>
+            </div>
+        </div>
+    );
 };
 
 export default CartItem;

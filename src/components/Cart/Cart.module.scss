@@ -1,0 +1,5 @@
+@use "./src/styles/scss/fonts";
+.cart_title {
+  font-size: fonts.$h6;
+  text-align: center;
+}

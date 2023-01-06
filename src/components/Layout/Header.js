@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 import {useWindowSize} from "../../hooks/use-windows-size";
 import {useState} from "react";
 
-const Header = (props) => {
+const Header = ({onShowCart}) => {
     const cartState = useSelector(state => state.cart)
     const [isNavActive, setIsNavActive] = useState(false)
     const [width] = useWindowSize()
@@ -24,7 +24,7 @@ const Header = (props) => {
                     <img src={logo} alt={"BALU shop logo"}/>
                 </NavLink>
                 <NavLink to={"/inspirations"}>inspiracje</NavLink>
-                <a href={'#'} onClick={props.onShowCart}>
+                <a href={'#'} onClick={onShowCart}>
                     Koszyk {numberOfItems > 0 && <span>{numberOfItems}</span>}
                 </a>
             </div>}
@@ -35,16 +35,14 @@ const Header = (props) => {
                 </NavLink>
 
                 <span className={`${classes['nav-btn']} ${cl}`} onClick={handleBtnClick}>
-                    <div className={classes['bar1']}></div>
-                    <div className={classes['bar2']}></div>
-                    <div className={classes['bar3']}></div>
+                    {[1,2,3].map(i => (<div key={i} className={classes[`bar${i}`]}></div>))}
                 </span>
                 <div className={`${classes['hidden-items']}  ${cl}` }>
                     <NavLink to={"/about-us"} onClick={handleBtnClick}>o nas</NavLink>
                     <NavLink to={"/products"} onClick={handleBtnClick}>produkty</NavLink>
                     <NavLink to={"/inspirations"} onClick={handleBtnClick}>inspiracje</NavLink>
                 </div>
-                <a href={'#'} onClick={props.onShowCart}>
+                <a href={'#'} onClick={onShowCart}>
                     Koszyk {numberOfItems > 0 && <span>{numberOfItems}</span>}
                 </a>
             </div>}

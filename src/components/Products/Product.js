@@ -4,37 +4,37 @@ import AddToCart from "../Cart/AddToCart";
 import {cartActions} from "../../store/cart";
 import {useDispatch} from "react-redux";
 
-const Product = (props) => {
+const Product = ({id, name, price, SKU, image, description}) => {
     const dispatch = useDispatch();
-    const price = `${props.price.toFixed(2)}PLN`;
+    const fixedPrice = `${price.toFixed(2)}PLN`;
 
     const onAddToCartHandler = quantity => {
         dispatch(cartActions.addItemToCart({
-            id: props.id,
-            name: props.name,
+            id: id,
+            name: name,
             quantity: quantity,
-            price: props.price,
-            SKU: props.SKU
+            price: price,
+            SKU: SKU
         }))
     }
 
     return (
         <div className={classes.product}>
             <div className={classes.product__image}>
-                <img alt="" src={`../img/${props.image}`}/>
+                <img alt="" src={`../img/${image}`}/>
             </div>
 
             <div className={classes.product__info}>
-                <h1 className={classes.product__name}>{props.name}</h1>
-                <p className={classes.product__description}>{props.description}</p>
+                <h1 className={classes.product__name}>{name}</h1>
+                <p className={classes.product__description}>{description}</p>
                 <div className={classes.actions}>
                     <div className={classes.price_container}>
-                        <span className={classes.product__price}>{price}</span>
-                        <span className={classes.product__SKU}>SKU: {props.SKU}</span>
+                        <span className={classes.product__price}>{fixedPrice}</span>
+                        <span className={classes.product__SKU}>SKU: {SKU}</span>
                     </div>
-                    <AddToCart disabled={`${props.SKU === 0 && 'disabled'}`} customClassName={`button--secondary`}
-                               max={props.SKU} onAddToCart={onAddToCartHandler} id={props.id}
-                               button_text={"Add to cart"}/>
+                    <AddToCart disabled={`${SKU === 0 && 'disabled'}`} customClassName={`button--secondary`}
+                               max={SKU} onAddToCart={onAddToCartHandler} id={id}
+                               button_text={"Dodaj do koszyka"}/>
                 </div>
             </div>
         </div>
