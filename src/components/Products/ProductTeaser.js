@@ -18,12 +18,13 @@ const ProductTeaser = ({id, name, price, SKU, image}) => {
             SKU: SKU
         }))
     }
+    const imageUrl = require(`../../assets/${image}`).default
 
     return (
         <div className={classes.product_teaser}>
             <NavLink to={`/products/${id}`}>
                 <div className={classes.product_teaser__image}
-                     style={{backgroundImage: `url(../img/${image})`}}></div>
+                     style={{backgroundImage: `url(${imageUrl})`}}></div>
                 <span className={classes.product_teaser__name}>{name}</span>
                 <span className={classes.product_teaser__price}>{fixedPrice}</span>
             </NavLink>
