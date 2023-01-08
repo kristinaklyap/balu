@@ -17,11 +17,12 @@ const Product = ({id, name, price, SKU, image, description}) => {
             SKU: SKU
         }))
     }
+    const imageUrl = require(`../../assets/${image}`).default
 
     return (
         <div className={classes.product}>
             <div className={classes.product__image}>
-                <img alt="" src={`../img/${image}`}/>
+                <img alt="" src={imageUrl}/>
             </div>
 
             <div className={classes.product__info}>
