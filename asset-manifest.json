@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/balu/static/css/main.5333bb88.chunk.css",
+    "main.js": "/balu/static/js/main.06689062.chunk.js",
+    "main.js.map": "/balu/static/js/main.06689062.chunk.js.map",
+    "runtime-main.js": "/balu/static/js/runtime-main.43d28578.js",
+    "runtime-main.js.map": "/balu/static/js/runtime-main.43d28578.js.map",
+    "static/js/2.60997886.chunk.js": "/balu/static/js/2.60997886.chunk.js",
+    "static/js/2.60997886.chunk.js.map": "/balu/static/js/2.60997886.chunk.js.map",
+    "index.html": "/balu/index.html",
+    "static/css/main.5333bb88.chunk.css.map": "/balu/static/css/main.5333bb88.chunk.css.map",
+    "static/js/2.60997886.chunk.js.LICENSE.txt": "/balu/static/js/2.60997886.chunk.js.LICENSE.txt",
+    "static/media/bgImage.8ad005c0.png": "/balu/static/media/bgImage.8ad005c0.png",
+    "static/media/slider-1.b8a93be5.png": "/balu/static/media/slider-1.b8a93be5.png",
+    "static/media/slider-2.326dbb67.jpg": "/balu/static/media/slider-2.326dbb67.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.43d28578.js",
+    "static/js/2.60997886.chunk.js",
+    "static/css/main.5333bb88.chunk.css",
+    "static/js/main.06689062.chunk.js"
+  ]
+}
