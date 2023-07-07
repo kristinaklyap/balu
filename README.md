@@ -13,19 +13,10 @@ This repo contains only frontend part of the project.
 [@kristinaklyap](https://www.github.com/kristinaklyap)
 
 
-## Demo
-
-https://balu.bieda.it/
-
 
 ## Tech Stack
 
-**Client:** Javacript, React, Redux Toolkit, CSS Modules (SCSS)
-
-**Server:** Strapi (NodeJS)
-
-**Payments:** Stripe
-
+Javacript, React, Redux Toolkit, CSS Modules (SCSS)
 
 
 ## Tree
